@@ -1,0 +1,57 @@
+body { font: 10pt sans-serif; }
+
+/* visibility rules */
+
+/* all sections are off by default */
+body section { display:none; }
+
+body.albums section#albums,
+body.album  section#album {
+    display: block;
+}
+
+/* nav styling */
+nav     { background:#555; padding:10px 10px 0 10px; }
+nav > a { display:inline-block; color: white; padding:4px 10px; }
+
+/* nav highlightion rules */
+body.albums > nav > a[href="#albums"] {
+    background:white; color:black;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.row {
+    margin-top: 20px;
+}
+
+.albums-list .album-item:nth-child(6n+1) {
+    clear: both;
+}
+.files-list .file-item:nth-child(4n+1) {
+    clear: both;
+}
+.button-row {
+    position: fixed;
+    height: 50px;
+    /* width: 100%; */
+    z-index: 1;
+    right: 50px;
+    top: 0;
+}
+video {
+    background-color: #666;
+    max-width: 100%;
+}
+.video-preview video {
+    width: 500px;
+    height: 375px;
+}
+
+
+
+

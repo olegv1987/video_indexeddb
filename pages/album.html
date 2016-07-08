@@ -1,0 +1,48 @@
+<div class="row row-album">
+    <div class="col-md-12">
+        <h3>Album</h3>
+    </div>
+</div>
+<div class="row video-preview">
+    <div class="col-md-6">
+        <video autoplay="true" id="video-webcam"></video>
+    </div>
+    <div class="col-md-6">
+        <video id="video-record" autoplay></video>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button id="record" data-status="ready">Record</button>
+        <button id="play">Play</button>
+        <button id="download">Download</button>
+        <button id="save">Save</button>
+    </div>
+</div>
+
+<div id="container">
+
+    <div class="files-list"><div class="row"></div></div>
+
+</div>
+
+<script id="jsrender-file" type="text/x-jsrender">
+
+    <div class="col-md-3 file-item" data-id="{{>id}} data-album_id="{{>album_id}}">
+        <video src="{{>file}}" controls="controls"></video>
+        <div class="caption">
+            <p>
+                <a href="javascript:void(0);" class="btn btn-default delete-file-item" role="button">Delete</a>
+            </p>
+        </div>
+    </div>
+
+</script>
+
+<script>
+
+    $(".row-album").promise().done(function () {
+        $('body').trigger("albumLoad");
+    });
+
+</script>
